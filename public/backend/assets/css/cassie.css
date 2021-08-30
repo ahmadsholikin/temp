@@ -12240,13 +12240,13 @@ body {
     left: -230px;
     z-index: 20;
     background-color: #fff;
-    border-top:3px solid #9c27b0;
+    /* border-top:3px solid #9c27b0; */
 }
 @media (min-width: 992px) {
     .sidebar {
         left: 0;
-        box-shadow: 0 4px 12px 0 rgba(131, 146, 165, 0.15);
-        border-right: 1px solid rgba(224, 225, 235, 0.85);
+        /* box-shadow: 0 4px 12px 0 rgba(131, 146, 165, 0.15);
+        border-right: 1px solid rgba(224, 225, 235, 0.85); */
    }
 }
 @media (min-width: 1200px) {
@@ -12312,7 +12312,7 @@ body {
    }
 }
 .sidebar-body {
-    padding: 20px 10px;
+    padding: 20px 10px 20px 0px;
     position: relative;
     height: calc(100% - 60px);
     overflow: hidden;
@@ -12367,12 +12367,13 @@ body {
 }
 .nav-sidebar .nav-link {
     position: relative;
-    padding: 7px 8px;
-    color: #373857;
+    padding: 8px 8px;
+    color: #5f6368;
     display: flex;
     align-items: center;
-    font-size: 0.775rem;
+    font-size: 13px;
     transition: all 0.25s;
+    font-weight: 400;
 }
 @media (prefers-reduced-motion: reduce) {
     .nav-sidebar .nav-link {
@@ -12380,7 +12381,8 @@ body {
    }
 }
 .nav-sidebar .nav-link:hover, .nav-sidebar .nav-link:focus {
-    background-color: rgba(85, 86, 253, 0.1);
+    background-color: rgba(0,0,0,.04);
+    border-radius: 0 15px 15px 0;
 }
 .nav-sidebar .nav-link svg {
     width: 17px;
@@ -12401,8 +12403,12 @@ body {
     transform: rotate(45deg);
 }
 .nav-sidebar .nav-link.active {
-    background-color: #d8d8d8;
-    color: rgb(0 0 0 / 90%);
+    background-color: #e8f0fe;
+    border: solid transparent;
+    border-width: 1px 1px 1px 0;
+    font-weight: 600;
+    color: #1967d2;
+    border-radius: 0px 15px 15px 0px;
 }
 .nav-sidebar .nav-link.active.with-sub::after {
     border-color: rgb(14 14 14 / 70%);
@@ -12426,10 +12432,10 @@ body {
     white-space: nowrap;
 }
 .nav-sidebar .nav-sub-link:hover, .nav-sidebar .nav-sub-link:focus {
-    color: #9c27b0;
+    color: #1967d2;
 }
 .nav-sidebar .nav-sub-link.active {
-    color: #9c27b0;
+    color: #1967d2;
     font-weight: 500;
     position: relative;
 }
@@ -12638,7 +12644,7 @@ body {
     background-color: #fff;
     border-bottom: 1px solid rgba(230, 231, 239, 0.85);
     transition: all 0.25s;
-    border-top:3px solid #9c27b0;
+    /* border-top:3px solid #9c27b0; */
 }
 @media (prefers-reduced-motion: reduce) {
     .header {

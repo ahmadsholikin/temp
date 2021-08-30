@@ -76,14 +76,14 @@
                     <i data-feather="help-circle"></i>
                     </a>
                     <div class="dropdown dropdown-notification">
-                        <a href="" class="dropdown-link new" data-toggle="dropdown">
+                        <a href="" class="dropdown-link" data-toggle="dropdown">
                         <i data-feather="bell"></i>
                         </a>
                         <div class="dropdown-menu dropdown-menu-right">
                             <div class="dropdown-menu-header">
                                 <h6>Notifications</h6>
                                 <a href="">
-                                <i data-feather="more-vertical"></i>
+                                    <i data-feather="more-vertical"></i>
                                 </a>
                             </div>
                             <!-- dropdown-menu-header -->
@@ -156,8 +156,8 @@
                                     </div>
                                     <!-- avatar -->
                                     <div class="media-body mg-l-10">
-                                        <h6><?=session('nama_pegawai');?></h6>
-                                        <span><?=session('id_user');?></span>
+                                        <h6><?=session('username');?></h6>
+                                        <span><?=session('group_nama');?></span>
                                     </div>
                                 </div>
                                 <!-- media -->
@@ -165,9 +165,6 @@
                             <div class="dropdown-menu-body">
                                 <a href="" class="dropdown-item">
                                     <i data-feather="user"></i> View Profile
-                                </a>
-                                <a data-toggle="modal" data-target="#linkAtasanModal" class="dropdown-item" onclick="loadLink()">
-                                    <i data-feather="link"></i> Link Atasan
                                 </a>
                                 <a href="" class="dropdown-item">
                                     <i data-feather="briefcase"></i> Account Settings
@@ -206,48 +203,7 @@
             </div>
             <!-- content-body -->
         </div>
-        <!-- content -->
-
-        <!-- modal link atasan -->
-        <div class="modal fade" id="linkAtasanModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-            <div class="modal-dialog" role="document">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <h5 class="modal-title" id="exampleModalCenterTitle">Link ke Akun Atasan</h5>
-                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                            <span aria-hidden="true">&times;</span>
-                        </button>
-                    </div>
-                    <div class="modal-body">
-                        <label for="">Akun Terhubung : </label>
-                        <table class="table table-bordered table-striped table-condensed" id="linked">
-                            <thead>
-                                <tr>
-                                    <th>NIP</th>
-                                    <th>Nama</th>
-                                    <th>Aktif ?</th>
-                                    <th>Aksi</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                            </tbody>
-                        </table>
-                        <hr>
-                        <div class="form-row">
-                            <div class="col form-group">
-                                <label>Pencarian data akun</label>
-                                <input class="form-control form-control-sm" name="link_atasan_id" id="link_atasan_id" type="text" placeholder="Ketikkan NIP atau Nama Akun Atasan...">
-                                <div class="help-block with-errors"></div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-primary btn-sm" onclick="simpanLink()">Tambahkan Link Baru</button>
-                        <button type="button" class="btn btn-secondary btn-sm" data-dismiss="modal">Tutup</button>
-                    </div>
-                </div>
-            </div>
-        </div>    
+        <!-- content --> 
     </body>
 
     <!-- script -->
