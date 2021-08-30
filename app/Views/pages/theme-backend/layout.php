@@ -47,10 +47,11 @@
         <div class="sidebar">
             <div class="sidebar-header">
                 <div>
-                    <a href="<?=base_url('public/backend');?>/index.html" class="sidebar-logo">
+                    <a class="navbar-brand brand-logo" href="<?= base_url(); ?>/beranda"><img  style="padding-top:5px;height:auto;width: 150px;" src="<?= base_url('public/assets/image/logo.png'); ?>" alt="logo" /></a>
+                    <!-- <a href="<?=base_url('public/backend');?>/index.html" class="sidebar-logo">
                     <span><?=session('nama');?></span>
                     </a>
-                    <small class="sidebar-logo-headline"><?=session('pengembang');?></small>
+                    <small class="sidebar-logo-headline"><?=session('pengembang');?></small> -->
                 </div>
             </div>
             <!-- sidebar-header -->
