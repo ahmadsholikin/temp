@@ -111,7 +111,7 @@
                         </button>
                     </div>
                     <div class="modal-body">
-                        <?php echo view('backend/option/menu/page-icon');?>
+                        <?php echo view('backend/option/menu/page-feather');?>
                     </div>
                 </div>
             </div>

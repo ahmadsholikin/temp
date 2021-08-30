@@ -56,6 +56,10 @@
                         <option <?=selected('0',$var['aktif']);?> value="0">Tidak</option>
                     </select>
                 </div>
+                <div class="col-md-1 col-sm-12 form-group">
+                    <label>Urutan</label>
+                    <input class="form-control form-control-sm" name="urutan" type="text" value="<?=$var['urutan'];?>" >
+                </div>
             </div>
 
             <div class="form-row">
@@ -117,7 +121,7 @@
                         </button>
                     </div>
                     <div class="modal-body">
-                        <?php echo view('backend/option/menu/page-icon');?>
+                        <?php echo view('backend/option/menu/page-feather');?>
                     </div>
                 </div>
             </div>

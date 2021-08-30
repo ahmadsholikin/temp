@@ -1,5 +1,5 @@
 <div class="card">
-	<div class="card-header">
+	<div class="card-header bg-transparent">
 		<a class="" href="<?=backend_url();?>/menu/add" role="button" data-toggle="tooltip" title="klik untuk menambah data baru" ><i class="mdi mdi-plus-circle"></i> Data Baru</a>
 	</div>
 	<div class="card-body">

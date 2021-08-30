@@ -1,7 +1,6 @@
 <?php namespace App\Controllers\Pages\Auth;
 use App\Controllers\FrontendController;
 use App\Models\Auth\LoginModel;
-use App\Models\Auth\PegawaiModel;
 
 class Auth extends FrontendController
 {

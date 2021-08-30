@@ -1,0 +1,27 @@
+Pengaturan site :
+☐ Profile view
+☐ Site view
+☐ Error handling
+
+Page creator :
+☐ Membuat file dari website
+☐ Membuat folder dari website
+
+Page generator :
+☐ Form validation
+☐ HTML generator
+☐ Database to model
+☐ Copy to clipboard
+☐ Code controller
+☐ Code models
+☐ Code view
+☐ Code Query models by field tabel : insert
+☐ Code Query models by field tabel : update
+☐ Code Query models by field tabel : delete
+☐ Config PHP Js
+☐ Config PHP Css
+
+Snippets :
+☐ Psr Snippet : Sec_ajax_incoming_request
+☐ Curl Snippet : curl_get
+☐ Curl Snippet : curl_post

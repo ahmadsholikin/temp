@@ -19,7 +19,7 @@
 				<td><?=$no++;?></td>
 				<td style="padding-left: <?=$row['hirarki']*15;?>px"><b><?=entitiestag($row['menu_nama']);?></b></td>
 				<td><?=$row['deskripsi'];?></td>
-				<td><i class="<?=$row['ikon'];?> mdi-17px"></i></td>
+				<td><?=$row['ikon'];?></td>
 				<td><?=$row['link'];?></td>
 				<td data-toggle="tooltip" title="klik untuk mengubah statusnya"><?=yatidak($row['aktif']);?></td>
 				<td>
@@ -46,7 +46,7 @@
 				<td><?=$no++;?></td>
 				<td style="padding-left: <?=$row['hirarki']*15;?>px"><b><?=entitiestag($row['menu_nama']);?></b></td>
 				<td><?=$row['deskripsi'];?></td>
-				<td><i class="<?=$row['ikon'];?> mdi-17px"></i></td>
+				<td><?=$row['ikon'];?></td>
 				<td><?=$row['link'];?></td>
 				<td data-toggle="tooltip" title="klik untuk mengubah statusnya"><?=yatidak($row['aktif']);?></td>
 				<td>
@@ -78,7 +78,7 @@
 							<td><?=$no++;?></td>
 							<td style="padding-left: <?=$row_child['hirarki']*15;?>px"><b><?=$row_child['menu_nama'];?></b></td>
 							<td><?=$row_child['deskripsi'];?></td>
-							<td><i class="<?=$row_child['ikon'];?> mdi-17px"></i></td>
+							<td><?=$row_child['ikon'];?></td>
 							<td><?=$row_child['link'];?></td>
 							<td data-toggle="tooltip" title="klik untuk mengubah statusnya"><?=yatidak($row_child['aktif']);?></td>
 							<td>

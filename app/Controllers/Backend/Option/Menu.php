@@ -31,19 +31,32 @@ class Menu extends BackendController
     {
         $slug                 = url_title(strip_tags($this->request->getPost('menu_nama')), '-', true);
         $root_menu            = explode("#", $this->request->getPost('induk_id'));
+
+        $param['induk_id']    = "";
+        $param['root_nama']   = "App";
+        if(count($root_menu)>1)
+        {
+            $param['induk_id']    = $root_menu[0];
+            $param['root_nama']   = $root_menu[1];
+        }
+
+        $param['urutan']      = $this->MenuModel->lastSortingUrutan(strip_tags($this->request->getPost('induk_id')));
+        if(!empty(($this->request->getPost('urutan'))))
+        {
+            $param['urutan'] = entitiestag(strip_tags($this->request->getPost('urutan')));
+        }
+
         $param['menu_nama']   = entitiestag(strip_tags($this->request->getPost('menu_nama')));
         $param['deskripsi']   = entitiestag(strip_tags($this->request->getPost('deskripsi')));
         $param['link']        = entitiestag(strip_tags($this->request->getPost('link')));
         $param['ikon']        = entitiestag(strip_tags($this->request->getPost('ikon')));
-        $param['induk_id']    = $root_menu[0];
-        $param['root_nama']   = $root_menu[1];
         $param['hirarki']     = entitiestag(strip_tags($this->request->getPost('hirarki')));
         $param['sub']         = entitiestag(strip_tags($this->request->getPost('sub')));
         $param['aktif']       = entitiestag(strip_tags($this->request->getPost('aktif')));
         $param['prefik']      = $slug;
         $param['nama_tabel']  = entitiestag(strip_tags($this->request->getPost('nama_tabel')));
         $param['primary_key'] = entitiestag(strip_tags($this->request->getPost('primary_key')));
-        $param['urutan']      = $this->MenuModel->lastSortingUrutan(strip_tags($this->request->getPost('induk_id')));
+      
         return $param;
     }
 

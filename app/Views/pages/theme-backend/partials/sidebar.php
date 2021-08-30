@@ -1,6 +1,3 @@
-<?php
-//print_r($activeMenu);
-?>
 <div id="dpSidebarBody" class="sidebar-body">
     <ul class="nav nav-sidebar">
         <li class="nav-label"><?php $uri = service('uri');?>
@@ -11,8 +8,7 @@
                 <!-- single menu -->
                 <li class="nav-item ">
                     <a class="nav-link "  href="<?= backend_url() . '/' . $row['link']; ?>" >
-                        <i data-feather="circle"></i> <?= entitiestag($row['menu_nama']); ?>
-
+                        <i data-feather="<?=$row['ikon'];?>"></i> <?= entitiestag($row['menu_nama']); ?>
                     </a>
                 </li>
                 <!-- end of single menu-->
@@ -20,8 +16,7 @@
                 <!-- dropdown menu -->
                 <li class="nav-item <?php if($row['menu_id']==$activeMenu['induk_id']) echo 'show'; ?>">
                     <a class="nav-link with-sub <?php if($row['menu_id']==$activeMenu['induk_id']) echo 'active'; ?>"  href="" >
-                        <i data-feather="circle"></i> <?= entitiestag($row['menu_nama']); ?>
-
+                        <i data-feather="<?=$row['ikon'];?>"></i> <?= entitiestag($row['menu_nama']); ?>
                     </a>
                     <nav class="nav nav-sub ">
                         <?php foreach ($menu as $row_child): ?>

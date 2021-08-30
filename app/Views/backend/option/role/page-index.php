@@ -1,5 +1,5 @@
 <div class="card">
-	<div class="card-header">
+	<div class="card-header bg-transparent">
 		<div class="form-row mb-0">
 			<div class="col form-group mb-0">
 				<label for="">Pilihan Grup yang akan di set hak aksesnya : </label>
