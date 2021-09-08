@@ -14,3 +14,13 @@ CRITICAL - 2021-09-09 06:02:08 --> Invalid file: backend/creator/form-generatorp
 #5 C:\xampp\htdocs\temp\system\CodeIgniter.php(333): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
 #6 C:\xampp\htdocs\temp\index.php(45): CodeIgniter\CodeIgniter->run()
 #7 {main}
+CRITICAL - 2021-09-09 06:43:52 --> You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near ''faq'' at line 1
+#0 C:\xampp\htdocs\temp\system\Database\MySQLi\Connection.php(314): mysqli->query('DESCRIBE 'faq'')
+#1 C:\xampp\htdocs\temp\system\Database\BaseConnection.php(713): CodeIgniter\Database\MySQLi\Connection->execute('DESCRIBE 'faq'')
+#2 C:\xampp\htdocs\temp\system\Database\BaseConnection.php(641): CodeIgniter\Database\BaseConnection->simpleQuery('DESCRIBE 'faq'')
+#3 C:\xampp\htdocs\temp\app\Controllers\Backend\Creator\FormGenerator.php(37): CodeIgniter\Database\BaseConnection->query('DESCRIBE 'faq'')
+#4 C:\xampp\htdocs\temp\system\CodeIgniter.php(936): App\Controllers\Backend\Creator\FormGenerator->generate()
+#5 C:\xampp\htdocs\temp\system\CodeIgniter.php(432): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Backend\Creator\FormGenerator))
+#6 C:\xampp\htdocs\temp\system\CodeIgniter.php(333): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#7 C:\xampp\htdocs\temp\index.php(45): CodeIgniter\CodeIgniter->run()
+#8 {main}

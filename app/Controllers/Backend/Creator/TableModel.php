@@ -33,13 +33,13 @@ class TableModel extends BackendController
         if ($this->request->isAJAX())
         {
             $table    = entitiestag($this->request->getPost('table'));
-            $query    = $this->db->query("SELECT COLUMN_NAME as kolom FROM INFORMATION_SCHEMA.COLUMNS WHERE TABLE_NAME = '".$table."'");
+            $query    = $this->db->query("DESCRIBE $table");
             $results  = $query->getResult();        
             $response = "";
 
             foreach ($results as $row)
             {
-                $response .= "\t\t\t\t\t\t\t\t\t\t'".$row->kolom."',\n";
+                $response .= "\t\t\t\t\t\t\t\t\t\t'".$row->Field."',\n";
             }
 
             echo "[\n".$response."\t\t\t\t\t\t\t\t\t];";

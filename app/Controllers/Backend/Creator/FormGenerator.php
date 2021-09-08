@@ -34,7 +34,7 @@ class FormGenerator extends BackendController
             helper('inflector');
 
             $table    = entitiestag($this->request->getPost('table'));
-            $query    = $this->db->query("SELECT COLUMN_NAME as kolom FROM INFORMATION_SCHEMA.COLUMNS WHERE TABLE_NAME = '".$table."'");
+            $query    = $this->db->query("DESCRIBE $table");
             $results  = $query->getResult();        
             $response = "";
 
@@ -42,8 +42,8 @@ class FormGenerator extends BackendController
             {
                 $response .= "\t".'<div class="form-row mb-3">'."\n";
                 $response .= "\t\t".'<div class="col form-group">'."\n";
-                $response .= "\t\t\t".'<label for="'.camelize($row->kolom).'">'.humanize($row->kolom).'</label>'."\n";
-                $response .= "\t\t\t".'<input type="text" class="form-control form-control-sm" name="'.camelize($row->kolom).'" id="'.camelize($row->kolom).'">'."\n";
+                $response .= "\t\t\t".'<label for="'.camelize($row->Field).'">'.humanize($row->Field).'</label>'."\n";
+                $response .= "\t\t\t".'<input type="text" class="form-control form-control-sm" name="'.camelize($row->Field).'" id="'.camelize($row->Field).'">'."\n";
                 $response .= "\t\t".'</div>'."\n";
                 $response .= "\t".'</div>'."\n";
             }
