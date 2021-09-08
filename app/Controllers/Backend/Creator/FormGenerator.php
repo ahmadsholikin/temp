@@ -40,27 +40,23 @@ class FormGenerator extends BackendController
 
             foreach ($results as $row)
             {
-                $dump  = "";
-                $dump .= "\t".'<div class="form-row mb-3">'."\n";
-                $dump .= "\t\t".'<div class="col form-group">'."\n";
-                $dump .= "\t\t\t".'<label for="'.camelize($row->kolom).'">'.humanize($row->kolom).'</label>'."\n";
-                $dump .= "\t\t\t".'<input type="text" class="form-control form-control-sm" name="'.camelize($row->kolom).'" id="'.camelize($row->kolom).'">'."\n";
-                $dump .= "\t\t".'</div>'."\n";
-                $dump .= "\t".'</div>'."\n";
-                $response.=$dump;
+                $response .= "\t".'<div class="form-row mb-3">'."\n";
+                $response .= "\t\t".'<div class="col form-group">'."\n";
+                $response .= "\t\t\t".'<label for="'.camelize($row->kolom).'">'.humanize($row->kolom).'</label>'."\n";
+                $response .= "\t\t\t".'<input type="text" class="form-control form-control-sm" name="'.camelize($row->kolom).'" id="'.camelize($row->kolom).'">'."\n";
+                $response .= "\t\t".'</div>'."\n";
+                $response .= "\t".'</div>'."\n";
             }
 
             //button
-            $button  = "";
-            $button .= "\t".'<div class="form-row mb-3">'."\n";
-            $button .= "\t\t".'<div class="col form-group">'."\n";
-            $button .= "\t\t\t".'<button type="submit" class="btn btn-sm btn-primary">Simpan</button>'."\n";
-            $button .= "\t\t".'</div>'."\n";
-            $button .= "\t".'</div>'."\n";
+            $response .= "\t".'<div class="form-row mb-3">'."\n";
+            $response .= "\t\t".'<div class="col form-group">'."\n";
+            $response .= "\t\t\t".'<button type="submit" class="btn btn-sm btn-primary">Simpan</button>'."\n";
+            $response .= "\t\t".'</div>'."\n";
+            $response .= "\t".'</div>'."\n";
 
             echo '<form action="" method="POST" enctype="multipart/form-data">'."\n";
             echo $response;
-            echo $button;
             echo '</form>';
         }
         else
