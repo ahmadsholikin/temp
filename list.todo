@@ -22,6 +22,6 @@ Page generator :
 ☐ Config PHP Css
 
 Snippets :
-☐ Psr Snippet : Sec_ajax_incoming_request
+☐ Psr Snippet  : Sec_ajax_incoming_request
 ☐ Curl Snippet : curl_get
 ☐ Curl Snippet : curl_post
