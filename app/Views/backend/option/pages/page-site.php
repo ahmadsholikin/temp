@@ -6,7 +6,25 @@
         <div class="row">
             <div class="col-12">
                 <p>Formulir pengaturan informasi website.</p>
-                <form action="" data-toggle="validator" role="form" enctype="multipart/form-data">
+                <?php if (!empty(session()->getFlashdata('error'))) : ?>
+                    <div class="alert alert-warning alert-dismissible fade show mt-4" role="alert">
+                        <strong>Informasi</strong>
+                        <br><br>
+                        <?php echo session()->getFlashdata('error'); ?>
+                        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                    </div>
+                    </hr />
+                <?php endif; ?>
+                <?php if (!empty(session()->getFlashdata('success'))) : ?>
+                    <div class="alert alert-success alert-dismissible fade show mt-4" role="alert">
+                        <strong>Update Berhasil</strong>
+                        <br><br>
+                        <?php echo session()->getFlashdata('success'); ?>
+                        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                    </div>
+                    </hr />
+                <?php endif; ?>
+                <form action="<?=backend_url();?>/site/update" method="POST" data-toggle="validator" role="form" enctype="multipart/form-data">
                     <div class="row">
                         <div class="col">
                             <div class="form-group">
@@ -74,7 +92,7 @@
                         <div class="col">
                             <div class="form-group">
                                 <label for="logo">Logo</label>
-                                <input type="file" class="form-control form-control-sm dropify" id="logo" name="logo" required data-default-file="<?=base_url();?>/public/assets/image/<?=$site['logo'];?>" data-max-file-size="1M" data-allowed-file-extensions="png jpg jpeg">
+                                <input type="file" class="form-control form-control-sm dropify" id="logo" name="logo" data-default-file="<?=base_url();?>/public/assets/image/<?=$site['logo'];?>" data-max-file-size="1M" data-allowed-file-extensions="png jpg jpeg">
                                 <div class="help-block with-errors"></div>
                             </div>
                         </div>

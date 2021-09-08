@@ -81,15 +81,16 @@ $routes->group('auth', function ($routes) {
 $routes->group('backend', function ($routes) {
 
     $routes->group('beranda', function ($routes) {
-        $root_folder = "Backend\Dashboard\Main";
+        $root_menu = "Backend\Dashboard\Main";
         //pages
-        $routes->add('/', $root_folder . '::index', ['filter' => 'auth']);
+        $routes->add('/', $root_menu . '::index', ['filter' => 'auth']);
     });
 
     $routes->group('site', function ($routes) {
-        $root_folder = "Backend\Option\Site";
+        $root_menu = "Backend\Option\Site";
         //pages
-        $routes->add('/', $root_folder . '::index', ['filter' => 'auth']);
+        $routes->add('/', $root_menu . '::index', ['filter' => 'auth']);
+        $routes->post('update', $root_menu . '::update', ['filter' => 'auth']);
     });
 
     // Route Option    

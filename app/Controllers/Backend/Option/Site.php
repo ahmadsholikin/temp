@@ -38,8 +38,8 @@ class Site extends BackendController
 		$data['alamat']           = entitiestag($this->request->getPost('alamat'));
 		$data['email']            = entitiestag($this->request->getPost('email'));
 		$data['kontak']           = entitiestag($this->request->getPost('kontak'));
-		$data['deskripsi']        = ($this->request->getPost('deskripsi'));
-		$data['tentang']    	  = ($this->request->getPost('tentang'));
+		$data['deskripsi']        = $this->request->getPost('deskripsi');
+		$data['tentang']    	  = $this->request->getPost('tentang');
 
         //proses validasi
         if(!$this->validate([
@@ -86,11 +86,26 @@ class Site extends BackendController
 	                'required' 		=> 'Entrian Link URL site wajib diisikan',
 			    ]
 			],
+			// 'logo' => [
+			// 	'rules'     => 'uploaded[logo]|max_size[logo,1024]|mime_in[logo,image/JPG,image/jpg,image/jpeg,image/JPEG,image/png,image/PNG]|ext_in[logo,png,jpg,jpeg]',
+			// 	'errors'    => [
+			// 		'uploaded' 		=> 'Logo wajib diunggah. Ukuran log tidak lebih dari 1 Mb. Tipe data yang diunggah harus bertipe data jpeg/jpg/png',
+			// 		'max_size' 		=> 'Ukuran foto tidak lebih dari 1 Mb',
+			// 		'mime_in' 		=> 'Tipe data yang diunggah harus bertipe data jpeg/jpg/png',
+			// 	]
+			// ],
 		]))
 		{
 			$validation = \Config\Services::validation();
 			return redirect()->back()->withInput()->with('validation',$validation);
         }
+
+		$cek_logo 	= $this->request->getFile('logo');
+		if ($cek_logo->isValid())
+		{
+			$logo 	= $this->request->getFile('logo')->store('logo');
+			$data['logo'] = $logo;
+		}
 
         $this->AppModel->update($id, $data);
         return redirect()->back();
