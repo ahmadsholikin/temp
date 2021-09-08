@@ -1,0 +1,7 @@
+CRITICAL - 2021-09-09 05:30:11 --> Undefined property: App\Controllers\Backend\Creator\FormGenerator::$path_view
+#0 C:\xampp\htdocs\temp\app\Controllers\Backend\Creator\FormGenerator.php(14): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined prope...', 'C:\\xampp\\htdocs...', 14, Array)
+#1 C:\xampp\htdocs\temp\system\CodeIgniter.php(936): App\Controllers\Backend\Creator\FormGenerator->index()
+#2 C:\xampp\htdocs\temp\system\CodeIgniter.php(432): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Backend\Creator\FormGenerator))
+#3 C:\xampp\htdocs\temp\system\CodeIgniter.php(333): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\xampp\htdocs\temp\index.php(45): CodeIgniter\CodeIgniter->run()
+#5 {main}
