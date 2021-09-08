@@ -1,6 +1,6 @@
-"API Get": {
+"Curl API Get": {
     "scope": "php",
-    "prefix": "apiget",
+    "prefix": "curlget",
     "body": [
         "\\$url            = '$1';",
         "\\$client         = \\Config\\Services::curlrequest();",
@@ -9,5 +9,5 @@
         "\\$api['reason']  = \\$response->getReason();",
         "\\$api['body']    = json_decode(\\$response->getBody());",
     ],
-    "description": "API Get"
+    "description": "Curl API Get"
 },

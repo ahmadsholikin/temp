@@ -23,5 +23,5 @@ Page generator :
 
 Snippets :
 ✔ Psr Snippet  : isajax @done(21-09-08 18:24)
-☐ Curl Snippet : curl_get
+✔ Curl Snippet : curl_get @done(21-09-08 18:53)
 ☐ Curl Snippet : curl_post
