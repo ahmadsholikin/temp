@@ -185,10 +185,10 @@ $routes->group('backend', function ($routes) {
 
     //creator
     $routes->group('table-model', function ($routes) {
-        $root_profile = "Backend\Creator\TableModel";
+        $root_groups = "Backend\Creator\TableModel";
         //pages
-        $routes->add('/', $root_profile.'::index', ['filter' => 'auth']);
-        $routes->post('generate', $root_profile.'::generate', ['filter' => 'auth']);
+        $routes->add('/', $root_groups.'::index', ['filter' => 'auth']);
+        $routes->post('generate', $root_groups.'::generate', ['filter' => 'auth']);
     });
 
     //form generator
@@ -196,12 +196,7 @@ $routes->group('backend', function ($routes) {
         $root_groups = 'Backend\Creator\FormGenerator';
         //pages
         $routes->add('/', $root_groups.'::index', ['filter' => 'auth']);
-        $routes->add('add', $root_groups.'::add', ['filter' => 'auth']);
-        $routes->get('edit', $root_groups.'::edit', ['filter' => 'auth']);
-        //process
-        $routes->post('insert', $root_groups.'::insert', ['filter' => 'auth']);
-        $routes->post('update', $root_groups.'::update', ['filter' => 'auth']);
-        $routes->get('delete', $root_groups.'::delete', ['filter' => 'auth']);
+        $routes->post('generate', $root_groups.'::generate', ['filter' => 'auth']);
     });
 
 });

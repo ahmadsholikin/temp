@@ -3,18 +3,69 @@ use App\Controllers\BackendController;
 
 class FormGenerator extends BackendController
 {
-    public $path_view = 'backend/creator/form-generator';
+    public $path_view = 'backend/creator/form-generator/';
     public $theme     = 'pages/theme-backend/render';
+
+    public function __construct()
+    {
+        $this->db = \Config\Database::connect();
+    }
 
     public function index()
     {
+        $query   = $this->db->query("show tables");
+        $results = $query->getResult(); 
+
         $param['menu']       = $this->menu;
         $param['activeMenu'] = $this->activeMenu;
         if ($param['activeMenu']['akses_lihat'] == '0')
         {
             return redirect()->to('denied');
         }
-        $param['page']  = view($this->path_view . 'page-index');
+        $data['data']   = $results;
+        $param['page']  = view($this->path_view . 'page-index',$data);
         return view($this->theme, $param);
+    }
+
+    public function generate()
+    {
+        if ($this->request->isAJAX())
+        {
+            helper('inflector');
+
+            $table    = entitiestag($this->request->getPost('table'));
+            $query    = $this->db->query("SELECT COLUMN_NAME as kolom FROM INFORMATION_SCHEMA.COLUMNS WHERE TABLE_NAME = '".$table."'");
+            $results  = $query->getResult();        
+            $response = "";
+
+            foreach ($results as $row)
+            {
+                $dump  = "";
+                $dump .= "\t".'<div class="form-row mb-3">'."\n";
+                $dump .= "\t\t".'<div class="col form-group">'."\n";
+                $dump .= "\t\t\t".'<label for="'.camelize($row->kolom).'">'.humanize($row->kolom).'</label>'."\n";
+                $dump .= "\t\t\t".'<input type="text" class="form-control form-control-sm" name="'.camelize($row->kolom).'" id="'.camelize($row->kolom).'">'."\n";
+                $dump .= "\t\t".'</div>'."\n";
+                $dump .= "\t".'</div>'."\n";
+                $response.=$dump;
+            }
+
+            //button
+            $button  = "";
+            $button .= "\t".'<div class="form-row mb-3">'."\n";
+            $button .= "\t\t".'<div class="col form-group">'."\n";
+            $button .= "\t\t\t".'<button type="submit" class="btn btn-sm btn-primary">Simpan</button>'."\n";
+            $button .= "\t\t".'</div>'."\n";
+            $button .= "\t".'</div>'."\n";
+
+            echo '<form action="" method="POST" enctype="multipart/form-data">'."\n";
+            echo $response;
+            echo $button;
+            echo '</form>';
+        }
+        else
+        {
+            echo "Access Denied";
+        }
     }
 }

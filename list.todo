@@ -12,8 +12,8 @@ Page generator :
 ☐ HTML generator
 ✔ Database to model @done(21-09-08 14:57)
 ✔ Copy to clipboard @done(21-09-08 14:57)
-☐ Code controller
-☐ Code models
+✔ Code controller @done(21-09-09 05:55)
+✔ Code models @done(21-09-09 05:55)
 ☐ Code view
 ☐ Code Query models by field tabel : insert
 ☐ Code Query models by field tabel : update
