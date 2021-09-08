@@ -74,7 +74,7 @@
                 <!-- header-left -->
                 <div class="header-right">
                     <a href="" class="header-help-link">
-                    <i data-feather="help-circle"></i>
+                        <i data-feather="help-circle"></i>
                     </a>
                     <div class="dropdown dropdown-notification">
                         <a href="" class="dropdown-link" data-toggle="dropdown">

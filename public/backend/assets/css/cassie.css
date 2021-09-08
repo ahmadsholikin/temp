@@ -12259,8 +12259,7 @@ body {
     align-items: center;
     padding: 0 5px;
     height: 30px;
-   /* border-bottom: 1px solid #e6e7ef;
-    */
+    border-bottom: 1px solid #eaebf1;
 }
 @media (min-width: 576px) {
     .sidebar-header {
@@ -12270,7 +12269,8 @@ body {
 }
 @media (min-width: 992px) {
     .sidebar-header {
-        height: 60px;
+        height: 50px;
+        border-bottom: 1px solid #eaebf1;
    }
 }
 .sidebar-logo {
@@ -12528,10 +12528,10 @@ body {
     color: #373857;
 }
 .content-header .breadcrumb-item a:hover, .content-header .breadcrumb-item a:focus {
-    color: #9c27b0;
+    color: #2196f3;
 }
 .content-header .breadcrumb-item.active {
-    color: #9c27b0;
+    color: #2196f3;
 }
 .content-title {
     font-size: 24px;
