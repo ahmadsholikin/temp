@@ -9,7 +9,15 @@ class AppModel extends Model
 
     protected $allowedFields      = [
                                         'nama',
-                                        'site'
+                                        'pengembanga',
+                                        'site',
+                                        'email',
+                                        'kontak',
+                                        'alamat',
+                                        'versi',
+                                        'logo',
+                                        'deskripsi',
+                                        'tentang',
                                     ];
     
     protected $skipValidation     = true;

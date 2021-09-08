@@ -101,7 +101,7 @@
                         <div class="col">
                             <div class="form-group">
                                 <label for="deskripsi">Deskripsi Site</label>
-                                <textarea class="form-control summernote" id="deskripsi" name="deskripsi"></textarea>
+                                <textarea class="form-control summernote" id="deskripsi" name="deskripsi"><?=$site['deskripsi'];?></textarea>
                                 <div class="help-block with-errors"></div>
                             </div>
                         </div>
@@ -109,8 +109,8 @@
                     <div class="row">
                         <div class="col">
                             <div class="form-group">
-                                <label for="tentang">Keteranga Tentang Selayang Pandang Site</label>
-                                <textarea class="form-control summernote" id="tentang" name="tentang"></textarea>
+                                <label for="tentang">Keterangan Tentang Selayang Pandang Site</label>
+                                <textarea class="form-control summernote" id="tentang" name="tentang"><?=$site['tentang'];?></textarea>
                                 <div class="help-block with-errors"></div>
                             </div>
                         </div>

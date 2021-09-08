@@ -236,6 +236,7 @@
 
     <script src="<?=base_url('public/backend');?>/lib/bootstrap/js/bootstrap.bundle.min.js"></script>
     <script src="<?=base_url('public/backend');?>/assets/js/cassie.js"></script>
+    <script src="<?= base_url(); ?>/public/assets/js/clipboard.js"></script>
     <script src="<?= base_url(); ?>/public/assets/js/require.js"></script>
     <script src="<?= base_url(); ?>/public/assets/js/page-layout.js"></script>
 </html>

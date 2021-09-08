@@ -124,8 +124,28 @@ class Menu extends BackendController
     // Proses Menambahkan menu baru
     public function insert()
     {
+        helper('inflector');
         $param               = $this->_variabel();
         $param['created_at'] = date('Y-m-d H: i: s');
+        if($this->request->getPost('create_ff')=='folder')
+        {
+            $folder_name = entitiestag($this->request->getPost('menu_nama'));
+            $folderPath = FCPATH."app/Controllers/Backend/".strtolower($folder_name);
+            mkdir("$folderPath");
+            chmod("$folderPath", 0755);
+        }
+        else if($this->request->getPost('create_ff')=='file')
+        {
+            $root_menu = explode("#", $this->request->getPost('induk_id'));
+            if(count($root_menu)>1)
+            {
+                $file_name      = entitiestag($this->request->getPost('menu_nama'));
+                $folderPath     = FCPATH."app/Controllers/Backend/".$root_menu[1]."/".pascalize($file_name).".php";
+                $root_folder = FCPATH."app/Controllers/Backend/".$root_menu[1];
+                chmod("$root_folder", 0777);
+                fopen($folderPath,"w");
+            }
+        }
         $this->MenuModel->insert($param);
         return redirect()->to(backend_url() . '/menu');
     }

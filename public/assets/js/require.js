@@ -3,6 +3,8 @@ $(document).ready(function () {
 		pageLength: 25,
 	});
 
+	var clipboard = new ClipboardJS('.copy');
+
 	feather.replace();
 
 	$('[data-toggle="tooltip"]').tooltip();

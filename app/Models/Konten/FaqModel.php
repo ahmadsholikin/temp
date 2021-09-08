@@ -9,12 +9,19 @@ class FaqModel extends Model
     protected $useSoftDeletes     = true;
 
     protected $allowedFields      = [
-                                        'pertanyaan',
-                                        'jawaban',
-                                        'created_at',
-                                        'updated_at',
-                                        'deleted_at'
-                                    ];
+        'id',
+        'pertanyaan',
+        'jawaban',
+        'created_at',
+        'updated_at',
+        'deleted_at',
+        'id',
+        'pertanyaan',
+        'jawaban',
+        'created_at',
+        'updated_at',
+        'deleted_at',
+    ];
 
     protected $useTimestamps      = true;
     protected $createdField       = 'created_at';

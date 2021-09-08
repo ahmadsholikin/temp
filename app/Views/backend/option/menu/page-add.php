@@ -50,6 +50,14 @@
                         <option value="0">Tidak</option>
                     </select>
                 </div>
+                <div class="col-md-2 col-sm-12 form-group">
+                    <label>Buat Folder/File ?</label>
+                    <select class="form-control form-control-sm" name="create_ff">
+                        <option value="0">Tidak</option>
+                        <option value="folder">Folder Controller</option>
+                        <option value="file">File Controller</option>
+                    </select>
+                </div>
             </div>
 
             <div class="form-row">

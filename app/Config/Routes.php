@@ -183,6 +183,14 @@ $routes->group('backend', function ($routes) {
         $routes->get('delete', $root_groups . '::delete', ['filter' => 'auth']);
     });
 
+    //creator
+    $routes->group('table-model', function ($routes) {
+        $root_profile = "Backend\Creator\TableModel";
+        //pages
+        $routes->add('/', $root_profile.'::index', ['filter' => 'auth']);
+        $routes->post('generate', $root_profile.'::generate', ['filter' => 'auth']);
+    });
+
 });
 
 
