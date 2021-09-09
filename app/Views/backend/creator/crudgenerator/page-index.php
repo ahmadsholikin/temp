@@ -42,7 +42,8 @@
             },
             success: function(data, textStatus, xhr)
             {
-                $("#target").html(data);
+                var obj = JSON.parse(data);
+                $("#target").html(obj.insert);
             },
             error: function(textStatus,xhr)
             {

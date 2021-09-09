@@ -35,6 +35,7 @@ class CRUDGenerator extends BackendController
             $query    = $this->db->query("DESCRIBE $table");
             $results  = $query->getResult();        
             $response = "";
+            $insert   = "";
 
             foreach ($results as $row)
             {
@@ -43,16 +44,18 @@ class CRUDGenerator extends BackendController
                 endif;
             }
 
-            echo "public function insert()"."\n";
-            echo "{"."\n";
-            echo "\tif(\$param['activeMenu']['akses_tambah'] == '0')"."\n";
-            echo "\t{"."\n";
-            echo "\t\treturn redirect()->to('denied');"."\n";
-            echo "\t}"."\n"."\n";
-            echo $response."\n";
-            echo "\t\$this->".pascalize($table)."Model->insert(\$data);"."\n";
-            echo "}"."\n"."\n";
-            echo "return redirect()->to(backend_url() . '/');";
+            $insert.="public function insert()"."\n";
+            $insert.="{"."\n";
+            $insert.="\tif(\$param['activeMenu']['akses_tambah'] == '0')"."\n";
+            $insert.="\t{"."\n";
+            $insert.="\t\treturn redirect()->to('denied');"."\n";
+            $insert.="\t}"."\n"."\n";
+            $insert.=$response."\n";
+            $insert.="\t\$this->".pascalize($table)."Model->insert(\$data);"."\n";
+            $insert.="\treturn redirect()->to(backend_url() . '/');"."\n";
+            $insert.="}"."\n"."\n";
+            $return['insert'] = $insert;
+            echo json_encode($return);
         }
         else
         {
