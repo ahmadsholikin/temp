@@ -35,13 +35,6 @@
         <link href="<?= base_url(); ?>/public/plugins/clockpicker/bootstrap-clockpicker.min.css" rel="stylesheet">
         <script src="<?=base_url('public/backend');?>/lib/jquery/jquery.min.js"></script>
         <link href="<?= base_url(); ?>/public/plugins/dropify/dist/css/dropify.min.css" rel="stylesheet">
-
-        <!-- <link href="<?= base_url('public/backend'); ?>/lib/quill/quill.core.css" rel="stylesheet"> -->
-        <!-- <link href="<?= base_url('public/backend'); ?>/lib/quill/quill.snow.css" rel="stylesheet"> -->
-        <!-- <link href="<?= base_url('public/backend'); ?>/lib/quill/quill.bubble.css" rel="stylesheet"> -->
-        <!-- <link href="<?= base_url(); ?>/public/plugins/taginput/tagsinput.css" rel="stylesheet"> -->
-        <!-- <link href="<?= base_url(); ?>/public/plugins/aos/aos.css" rel="stylesheet"> -->
-
     </head>
     <body>
         <div class="sidebar">
