@@ -21,8 +21,8 @@
 						<td><?=$row['jawaban'];?></td>
 						<td>
 							<div class="btn-group" role="group">
-								<?=btn_edit('./konten-faq/edit?id='.$row['id']);?>
-								<?=btn_delete('./konten-faq/delete?id='.$row['id']);?>
+								<?=btn_edit("./konten-faq/edit?id=".$row["id"]);?>
+								<?=btn_delete("./konten-faq/delete?id=".$row["id"]);?>
 							</div>
 						</td>
 					</tr>	

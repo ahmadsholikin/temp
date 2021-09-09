@@ -40,6 +40,7 @@ class TableGenerator extends BackendController
             $results  = $query->getResult();        
             $thead    = "";
             $tbody    = "";
+            $aksi     = "<td>-</td>";
 
             foreach ($results as $row)
             {
@@ -47,6 +48,16 @@ class TableGenerator extends BackendController
                     $thead .= "\t\t\t\t".'<th>'.humanize($row->Field).'</th>'."\n";
                     $tbody .= "\t\t\t\t".'<td><?=$row["'.humanize($row->Field).'"];?></td>'."\n";
                 endif;
+
+                if(($row->Key<>'id'))
+                {
+                    $aksi = "\t\t\t\t"."<td>\n";
+                    $aksi.= "\t\t\t\t\t".'<div class="btn-group" role="group">'."\n";
+                    $aksi.= "\t\t\t\t\t\t".'<?=btn_edit("./edit?id=".$row["id"]);?>'."\n";
+                    $aksi.= "\t\t\t\t\t\t".'<?=btn_delete("./delete?id=".$row["id"]);?>'."\n";
+                    $aksi.= "\t\t\t\t\t".'</div">'."\n";
+                    $aksi.= "\t\t\t\t"."<td>\n";
+                }
             }
 
             echo '<div class="table-responsive">'."\n";
@@ -55,13 +66,15 @@ class TableGenerator extends BackendController
             echo "\t\t\t".'<tr>'."\n";
             echo "\t\t\t\t"."<th>No.</th>"."\n";
             echo $thead;
+            echo "\t\t\t\t"."<th>Aksi</th>"."\n";
             echo "\t\t\t".'</tr>'."\n";
             echo "\t\t".'<thead>'."\n";
             echo "\t\t".'<tbody>'."\n";
-            echo "\t\t\t".'<?php $no=1; foreach($data  as $row):?>'."\n";
+            echo "\t\t\t".'<?php $no=1; foreach($data as $row):?>'."\n";
             echo "\t\t\t".'<tr>'."\n";
-            echo "\t\t\t\t".'<th><?=$no++;?></th>'."\n";
+            echo "\t\t\t\t".'<td><?=$no++;?></td>'."\n";
             echo $tbody;
+            echo $aksi;
             echo "\t\t\t".'</tr>'."\n";
             echo "\t\t\t".'<?php endforeach;?>'."\n";
             echo "\t\t".'</tbody>'."\n";
