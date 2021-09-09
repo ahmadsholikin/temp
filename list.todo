@@ -15,7 +15,7 @@ Page generator :
 ✔ Code controller @done(21-09-09 05:55)
 ✔ Code models @done(21-09-09 05:55)
 ☐ Code view
-☐ Code Query models by field tabel : insert
+✔ Code Query models by field tabel : insert @done(21-09-09 15:34)
 ☐ Code Query models by field tabel : update
 ☐ Code Query models by field tabel : delete
 ☐ Config PHP Js
