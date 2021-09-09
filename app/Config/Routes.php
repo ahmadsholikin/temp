@@ -208,6 +208,13 @@ $routes->group('backend', function ($routes) {
         $routes->post('generate', $root_groups.'::generate', ['filter' => 'auth']);
     });
 
+    $routes->group('table-generator', function ($routes) {
+        $root_groups = 'Backend\Creator\TableGenerator';
+        //pages
+        $routes->add('/', $root_groups.'::index', ['filter' => 'auth']);
+        $routes->post('generate', $root_groups.'::generate', ['filter' => 'auth']);
+    });
+
 });
 
 

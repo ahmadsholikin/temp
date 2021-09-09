@@ -18,10 +18,12 @@ class FormGenerator extends BackendController
 
         $param['menu']       = $this->menu;
         $param['activeMenu'] = $this->activeMenu;
+
         if ($param['activeMenu']['akses_lihat'] == '0')
         {
             return redirect()->to('denied');
         }
+
         $data['data']   = $results;
         $param['page']  = view($this->path_view . 'page-index',$data);
         return view($this->theme, $param);
@@ -58,9 +60,9 @@ class FormGenerator extends BackendController
             $response .= "\t\t".'</div>'."\n";
             $response .= "\t".'</div>'."\n";
 
-            echo '<form action="" method="POST" data-toggle="validator" enctype="multipart/form-data">'."\n";
+            echo '<table class="">'."\n";
             echo $response;
-            echo '</form>';
+            echo '</table>';
         }
         else
         {
