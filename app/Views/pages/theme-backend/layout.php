@@ -145,7 +145,7 @@
                     <div class="dropdown dropdown-loggeduser">
                         <a href="" class="dropdown-link" data-toggle="dropdown">
                             <div class="avatar avatar-sm">
-                                <img src="<?=$_SESSION['user_image'];?>" onerror="this.onerror=null;this.src='https://via.placeholder.com/500/637382/fff';" class="rounded-circle" alt="">
+                                <img src="<?=$_SESSION['foto'];?>" onerror="this.onerror=null;this.src='https://via.placeholder.com/500/637382/fff';" class="rounded-circle" alt="">
                             </div>
                             <!-- avatar -->
                         </a>
@@ -153,7 +153,7 @@
                             <div class="dropdown-menu-header">
                                 <div class="media align-items-center">
                                     <div class="avatar">
-                                        <img src="<?=$_SESSION['user_image'];?>" onerror="this.onerror=null;this.src='https://via.placeholder.com/500/637382/fff';" class="rounded-circle" alt="">
+                                        <img src="<?=$_SESSION['foto'];?>" onerror="this.onerror=null;this.src='https://via.placeholder.com/500/637382/fff';" class="rounded-circle" alt="">
                                     </div>
                                     <!-- avatar -->
                                     <div class="media-body mg-l-10">
@@ -164,7 +164,7 @@
                                 <!-- media -->
                             </div>
                             <div class="dropdown-menu-body">
-                                <a href="" class="dropdown-item">
+                                <a href="<?=backend_url();?>/profile" class="dropdown-item">
                                     <i data-feather="user"></i> View Profile
                                 </a>
                                 <a href="" class="dropdown-item">

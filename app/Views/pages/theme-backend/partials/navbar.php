@@ -35,7 +35,7 @@ $session    = session();
             </li>
             <li class="nav-item nav-profile dropdown animated bounceIn delay-0.8s">
                 <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown" id="profileDropdown">
-                    <img onerror="" src="<?= site_url()?>public/upload/profil/<?=session('user_image') ?>" alt="profile" />
+                    <img onerror="<?= site_url()?>public/upload/profil/<?=session('user_image') ?>" src="<?=$_SESSION['foto'];?>" alt="profile" />
                     <span class="nav-profile-namespan"><?= $session->username; ?></span>
                 </a>
                 <div class="dropdown-menu dropdown-menu-right navbar-dropdown" aria-labelledby="profileDropdown">

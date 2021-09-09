@@ -93,6 +93,13 @@ $routes->group('backend', function ($routes) {
         $routes->post('update', $root_menu . '::update', ['filter' => 'auth']);
     });
 
+    $routes->group('profile', function ($routes) {
+        $root_menu = "Backend\Option\Profile";
+        //pages
+        $routes->add('/', $root_menu.'::index', ['filter' => 'auth']);
+        $routes->post('update', $root_menu.'::update', ['filter' => 'auth']);
+    });
+
     // Route Option    
     $routes->group('menu', function ($routes) {
         $root_menu = "Backend\Option\Menu";
@@ -151,12 +158,7 @@ $routes->group('backend', function ($routes) {
         $routes->post('aktif-link', $root_user.'::aktifLink', ['filter' => 'auth']);
     });
 
-    $routes->group('profile', function ($routes) {
-        $root_profile = "Backend\Option\Profile";
-        //pages
-        $routes->add('/', $root_profile.'::index', ['filter' => 'auth']);
-        $routes->post('update', $root_profile.'::update', ['filter' => 'auth']);
-    });
+    
 
     //
     $routes->group('konten-faq', function ($routes) {
@@ -196,6 +198,13 @@ $routes->group('backend', function ($routes) {
         $root_groups = 'Backend\Creator\FormGenerator';
         //pages
         $routes->add('/', $root_groups.'::index', ['filter' => 'auth']);
+        $routes->post('generate', $root_groups.'::generate', ['filter' => 'auth']);
+    });
+
+    $routes->group('crud-generator', function ($routes) {
+        $root_groups = 'Backend\Creator\CRUDGenerator';
+        //pages
+        $routes->add('/', $root_groups . '::index', ['filter' => 'auth']);
         $routes->post('generate', $root_groups.'::generate', ['filter' => 'auth']);
     });
 

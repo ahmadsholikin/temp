@@ -24,3 +24,79 @@ CRITICAL - 2021-09-09 06:43:52 --> You have an error in your SQL syntax; check t
 #6 C:\xampp\htdocs\temp\system\CodeIgniter.php(333): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
 #7 C:\xampp\htdocs\temp\index.php(45): CodeIgniter\CodeIgniter->run()
 #8 {main}
+CRITICAL - 2021-09-09 11:41:34 --> Invalid file: backend/option/profilepage-index.php
+#0 C:\xampp\htdocs\temp\system\View\View.php(203): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('backend/option/...')
+#1 C:\xampp\htdocs\temp\system\Common.php(1217): CodeIgniter\View\View->render('backend/option/...', Array, true)
+#2 C:\xampp\htdocs\temp\app\Controllers\Backend\Option\Profile.php(17): view('backend/option/...')
+#3 C:\xampp\htdocs\temp\system\CodeIgniter.php(936): App\Controllers\Backend\Option\Profile->index()
+#4 C:\xampp\htdocs\temp\system\CodeIgniter.php(432): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Backend\Option\Profile))
+#5 C:\xampp\htdocs\temp\system\CodeIgniter.php(333): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#6 C:\xampp\htdocs\temp\index.php(45): CodeIgniter\CodeIgniter->run()
+#7 {main}
+CRITICAL - 2021-09-09 11:42:17 --> Invalid file: backend/option/profile/page-profile.php
+#0 C:\xampp\htdocs\temp\system\View\View.php(203): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('backend/option/...')
+#1 C:\xampp\htdocs\temp\system\Common.php(1217): CodeIgniter\View\View->render('backend/option/...', Array, true)
+#2 C:\xampp\htdocs\temp\app\Controllers\Backend\Option\Profile.php(17): view('backend/option/...')
+#3 C:\xampp\htdocs\temp\system\CodeIgniter.php(936): App\Controllers\Backend\Option\Profile->index()
+#4 C:\xampp\htdocs\temp\system\CodeIgniter.php(432): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Backend\Option\Profile))
+#5 C:\xampp\htdocs\temp\system\CodeIgniter.php(333): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#6 C:\xampp\htdocs\temp\index.php(45): CodeIgniter\CodeIgniter->run()
+#7 {main}
+CRITICAL - 2021-09-09 11:42:18 --> Invalid file: backend/option/profile/page-profile.php
+#0 C:\xampp\htdocs\temp\system\View\View.php(203): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('backend/option/...')
+#1 C:\xampp\htdocs\temp\system\Common.php(1217): CodeIgniter\View\View->render('backend/option/...', Array, true)
+#2 C:\xampp\htdocs\temp\app\Controllers\Backend\Option\Profile.php(17): view('backend/option/...')
+#3 C:\xampp\htdocs\temp\system\CodeIgniter.php(936): App\Controllers\Backend\Option\Profile->index()
+#4 C:\xampp\htdocs\temp\system\CodeIgniter.php(432): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Backend\Option\Profile))
+#5 C:\xampp\htdocs\temp\system\CodeIgniter.php(333): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#6 C:\xampp\htdocs\temp\index.php(45): CodeIgniter\CodeIgniter->run()
+#7 {main}
+CRITICAL - 2021-09-09 13:25:27 --> Cannot use object of type stdClass as array
+#0 C:\xampp\htdocs\temp\system\View\View.php(220): include()
+#1 C:\xampp\htdocs\temp\system\View\View.php(222): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#2 C:\xampp\htdocs\temp\system\Common.php(1217): CodeIgniter\View\View->render('backend/option/...', Array, true)
+#3 C:\xampp\htdocs\temp\app\Controllers\Backend\Option\Profile.php(21): view('backend/option/...', Array)
+#4 C:\xampp\htdocs\temp\system\CodeIgniter.php(936): App\Controllers\Backend\Option\Profile->index()
+#5 C:\xampp\htdocs\temp\system\CodeIgniter.php(432): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Backend\Option\Profile))
+#6 C:\xampp\htdocs\temp\system\CodeIgniter.php(333): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#7 C:\xampp\htdocs\temp\index.php(45): CodeIgniter\CodeIgniter->run()
+#8 {main}
+CRITICAL - 2021-09-09 13:25:39 --> Cannot use object of type stdClass as array
+#0 C:\xampp\htdocs\temp\system\View\View.php(220): include()
+#1 C:\xampp\htdocs\temp\system\View\View.php(222): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#2 C:\xampp\htdocs\temp\system\Common.php(1217): CodeIgniter\View\View->render('backend/option/...', Array, true)
+#3 C:\xampp\htdocs\temp\app\Controllers\Backend\Option\Profile.php(21): view('backend/option/...', Array)
+#4 C:\xampp\htdocs\temp\system\CodeIgniter.php(936): App\Controllers\Backend\Option\Profile->index()
+#5 C:\xampp\htdocs\temp\system\CodeIgniter.php(432): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Backend\Option\Profile))
+#6 C:\xampp\htdocs\temp\system\CodeIgniter.php(333): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#7 C:\xampp\htdocs\temp\index.php(45): CodeIgniter\CodeIgniter->run()
+#8 {main}
+CRITICAL - 2021-09-09 14:09:25 --> Undefined variable: data
+#0 C:\xampp\htdocs\temp\app\Views\backend\creator\crudgenerator\page-index.php(11): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined varia...', 'C:\\xampp\\htdocs...', 11, Array)
+#1 C:\xampp\htdocs\temp\system\View\View.php(220): include('C:\\xampp\\htdocs...')
+#2 C:\xampp\htdocs\temp\system\View\View.php(222): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#3 C:\xampp\htdocs\temp\system\Common.php(1217): CodeIgniter\View\View->render('backend/creator...', Array, true)
+#4 C:\xampp\htdocs\temp\app\Controllers\Backend\Creator\CRUDGenerator.php(17): view('backend/creator...')
+#5 C:\xampp\htdocs\temp\system\CodeIgniter.php(936): App\Controllers\Backend\Creator\CRUDGenerator->index()
+#6 C:\xampp\htdocs\temp\system\CodeIgniter.php(432): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Backend\Creator\CRUDGenerator))
+#7 C:\xampp\htdocs\temp\system\CodeIgniter.php(333): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\xampp\htdocs\temp\index.php(45): CodeIgniter\CodeIgniter->run()
+#9 {main}
+CRITICAL - 2021-09-09 14:25:57 --> Object of class App\Controllers\Backend\Creator\CRUDGenerator could not be converted to string
+#0 C:\xampp\htdocs\temp\system\CodeIgniter.php(936): App\Controllers\Backend\Creator\CRUDGenerator->generate()
+#1 C:\xampp\htdocs\temp\system\CodeIgniter.php(432): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Backend\Creator\CRUDGenerator))
+#2 C:\xampp\htdocs\temp\system\CodeIgniter.php(333): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#3 C:\xampp\htdocs\temp\index.php(45): CodeIgniter\CodeIgniter->run()
+#4 {main}
+CRITICAL - 2021-09-09 14:25:58 --> Object of class App\Controllers\Backend\Creator\CRUDGenerator could not be converted to string
+#0 C:\xampp\htdocs\temp\system\CodeIgniter.php(936): App\Controllers\Backend\Creator\CRUDGenerator->generate()
+#1 C:\xampp\htdocs\temp\system\CodeIgniter.php(432): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Backend\Creator\CRUDGenerator))
+#2 C:\xampp\htdocs\temp\system\CodeIgniter.php(333): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#3 C:\xampp\htdocs\temp\index.php(45): CodeIgniter\CodeIgniter->run()
+#4 {main}
+CRITICAL - 2021-09-09 14:26:54 --> Object of class App\Controllers\Backend\Creator\CRUDGenerator could not be converted to string
+#0 C:\xampp\htdocs\temp\system\CodeIgniter.php(936): App\Controllers\Backend\Creator\CRUDGenerator->generate()
+#1 C:\xampp\htdocs\temp\system\CodeIgniter.php(432): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Backend\Creator\CRUDGenerator))
+#2 C:\xampp\htdocs\temp\system\CodeIgniter.php(333): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#3 C:\xampp\htdocs\temp\index.php(45): CodeIgniter\CodeIgniter->run()
+#4 {main}

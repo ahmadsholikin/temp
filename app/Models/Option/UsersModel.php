@@ -4,7 +4,7 @@ use CodeIgniter\Model;
 class UsersModel extends Model
 {
     protected $table              = 'app_users';
-    protected $primaryKey         = 'email';
+    protected $primaryKey         = 'user_id';
 
     protected $useSoftDeletes     = false;
     protected $returnType         = 'object';
@@ -12,8 +12,10 @@ class UsersModel extends Model
     protected $allowedFields      = [
                                         'username',
                                         'email',
+                                        'kontak',
                                         'password',
                                         'group_id',
+                                        'foto',
                                         'is_active'
                                     ];
 

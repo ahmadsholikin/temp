@@ -60,6 +60,8 @@ class Auth extends FrontendController
         {
             $user = array(
 				"email"      => $cek_akun['email'],
+                "foto"       => base_url()."/writable/uploads/".$cek_akun['foto'],
+                "user_id"    => $cek_akun['user_id'],
                 "username"   => $cek_akun['username'],
                 "group_id"   => $cek_akun['group_id'],
                 "group_nama" => $cek_akun['group_nama'],
