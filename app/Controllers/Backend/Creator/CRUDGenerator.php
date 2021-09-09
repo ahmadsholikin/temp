@@ -36,6 +36,8 @@ class CRUDGenerator extends BackendController
             $results  = $query->getResult();        
             $response = "";
             $insert   = "";
+            $update   = "";
+            $delete   = "";
 
             foreach ($results as $row)
             {
@@ -44,6 +46,7 @@ class CRUDGenerator extends BackendController
                 endif;
             }
 
+            //insert function
             $insert.="public function insert()"."\n";
             $insert.="{"."\n";
             $insert.="\tif(\$param['activeMenu']['akses_tambah'] == '0')"."\n";
@@ -55,6 +58,34 @@ class CRUDGenerator extends BackendController
             $insert.="\treturn redirect()->to(backend_url() . '/');"."\n";
             $insert.="}"."\n"."\n";
             $return['insert'] = $insert;
+
+            //update function
+            $update.="public function update()"."\n";
+            $update.="{"."\n";
+            $update.="\tif(\$param['activeMenu']['akses_ubah'] == '0')"."\n";
+            $update.="\t{"."\n";
+            $update.="\t\treturn redirect()->to('denied');"."\n";
+            $update.="\t}"."\n"."\n";
+            $update.=$response."\n";
+            $update.="\t\$id =  entitiestag(\$this->request->getPost('id'));"."\n";
+            $update.="\t\$this->".pascalize($table)."Model->update(\$id,\$data);"."\n";
+            $update.="\treturn redirect()->to(backend_url() . '/');"."\n";
+            $update.="}"."\n"."\n";
+            $return['update'] = $update;
+
+            //delete function
+            $delete.="public function delete()"."\n";
+            $delete.="{"."\n";
+            $delete.="\tif(\$param['activeMenu']['akses_hapus'] == '0')"."\n";
+            $delete.="\t{"."\n";
+            $delete.="\t\treturn redirect()->to('denied');"."\n";
+            $delete.="\t}"."\n"."\n";
+            $delete.="\t\$id =  entitiestag(\$this->request->getGet('id'));"."\n";
+            $delete.="\t\$this->".pascalize($table)."Model->delete(\$id);"."\n";
+            $delete.="\treturn redirect()->to(backend_url() . '/');"."\n";
+            $delete.="}"."\n"."\n";
+            $return['delete'] = $delete;
+
             echo json_encode($return);
         }
         else

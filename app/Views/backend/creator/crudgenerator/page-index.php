@@ -43,7 +43,7 @@
             success: function(data, textStatus, xhr)
             {
                 var obj = JSON.parse(data);
-                $("#target").html(obj.insert);
+                $("#target").html(obj.insert+'\n'+obj.update+'\n'+obj.delete);
             },
             error: function(textStatus,xhr)
             {
