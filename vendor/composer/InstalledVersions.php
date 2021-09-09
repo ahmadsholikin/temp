@@ -14,12 +14,12 @@ class InstalledVersions
 private static $installed = array (
   'root' => 
   array (
-    'pretty_version' => 'dev-master',
-    'version' => 'dev-master',
+    'pretty_version' => 'dev-main',
+    'version' => 'dev-main',
     'aliases' => 
     array (
     ),
-    'reference' => 'ddcfb5061f6d84e9bf14c8ca8217f5f8c2b6ae2b',
+    'reference' => '5dfd45511d0c5c70a526ba508b7aca9c31a4fe48',
     'name' => 'codeigniter4/framework',
   ),
   'versions' => 
@@ -35,12 +35,12 @@ private static $installed = array (
     ),
     'codeigniter4/framework' => 
     array (
-      'pretty_version' => 'dev-master',
-      'version' => 'dev-master',
+      'pretty_version' => 'dev-main',
+      'version' => 'dev-main',
       'aliases' => 
       array (
       ),
-      'reference' => 'ddcfb5061f6d84e9bf14c8ca8217f5f8c2b6ae2b',
+      'reference' => '5dfd45511d0c5c70a526ba508b7aca9c31a4fe48',
     ),
     'doctrine/instantiator' => 
     array (
@@ -50,6 +50,15 @@ private static $installed = array (
       array (
       ),
       'reference' => 'd56bf6102915de5702778fe20f2de3b2fe570b5b',
+    ),
+    'dompdf/dompdf' => 
+    array (
+      'pretty_version' => 'v1.0.2',
+      'version' => '1.0.2.0',
+      'aliases' => 
+      array (
+      ),
+      'reference' => '8768448244967a46d6e67b891d30878e0e15d25c',
     ),
     'ezyang/htmlpurifier' => 
     array (
@@ -81,21 +90,12 @@ private static $installed = array (
     ),
     'laminas/laminas-escaper' => 
     array (
-      'pretty_version' => '2.8.0',
-      'version' => '2.8.0.0',
+      'pretty_version' => '2.9.0',
+      'version' => '2.9.0.0',
       'aliases' => 
       array (
       ),
-      'reference' => '2d6dce99668b413610e9544183fa10392437f542',
-    ),
-    'laminas/laminas-zendframework-bridge' => 
-    array (
-      'pretty_version' => '1.3.0',
-      'version' => '1.3.0.0',
-      'aliases' => 
-      array (
-      ),
-      'reference' => '13af2502d9bb6f7d33be2de4b51fb68c6cdb476e',
+      'reference' => '891ad70986729e20ed2e86355fcf93c9dc238a5f',
     ),
     'maennchen/zipstream-php' => 
     array (
@@ -173,6 +173,24 @@ private static $installed = array (
       ),
       'reference' => 'bae7c545bef187884426f042434e561ab1ddb182',
     ),
+    'phenx/php-font-lib' => 
+    array (
+      'pretty_version' => '0.5.2',
+      'version' => '0.5.2.0',
+      'aliases' => 
+      array (
+      ),
+      'reference' => 'ca6ad461f032145fff5971b5985e5af9e7fa88d8',
+    ),
+    'phenx/php-svg-lib' => 
+    array (
+      'pretty_version' => 'v0.3.3',
+      'version' => '0.3.3.0',
+      'aliases' => 
+      array (
+      ),
+      'reference' => '5fa61b65e612ce1ae15f69b3d223cb14ecc60e32',
+    ),
     'phpdocumentor/reflection-common' => 
     array (
       'pretty_version' => '2.2.0',
@@ -208,6 +226,15 @@ private static $installed = array (
       array (
       ),
       'reference' => '418cd304e8e6b417ea79c3b29126a25dc4b1170c',
+    ),
+    'phpoffice/phpword' => 
+    array (
+      'pretty_version' => '0.18.2',
+      'version' => '0.18.2.0',
+      'aliases' => 
+      array (
+      ),
+      'reference' => 'aca10785cf68dc95d7f6fac4fe854979fef3f8db',
     ),
     'phpspec/prophecy' => 
     array (
@@ -265,12 +292,12 @@ private static $installed = array (
     ),
     'phpunit/phpunit' => 
     array (
-      'pretty_version' => '8.5.19',
-      'version' => '8.5.19.0',
+      'pretty_version' => '8.5.20',
+      'version' => '8.5.20.0',
       'aliases' => 
       array (
       ),
-      'reference' => '496281b64ec781856ed0a583483b5923b4033722',
+      'reference' => '9deefba183198398a09b927a6ac6bc1feb0b7b70',
     ),
     'predis/predis' => 
     array (
@@ -325,6 +352,15 @@ private static $installed = array (
       array (
       ),
       'reference' => '408d5eafb83c57f6365a3ca330ff23aa4a5fa39b',
+    ),
+    'sabberworm/php-css-parser' => 
+    array (
+      'pretty_version' => '8.3.1',
+      'version' => '8.3.1.0',
+      'aliases' => 
+      array (
+      ),
+      'reference' => 'd217848e1396ef962fb1997cf3e2421acba7f796',
     ),
     'sebastian/code-unit-reverse-lookup' => 
     array (
@@ -478,13 +514,6 @@ private static $installed = array (
       array (
       ),
       'reference' => '6964c76c7804814a842473e0c8fd15bab0f18e25',
-    ),
-    'zendframework/zend-escaper' => 
-    array (
-      'replaced' => 
-      array (
-        0 => '^2.6.1',
-      ),
     ),
   ),
 );
