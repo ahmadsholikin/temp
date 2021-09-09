@@ -38,13 +38,34 @@ class CRUDGenerator extends BackendController
             $insert   = "";
             $update   = "";
             $delete   = "";
+            $validate = "";
+            $require  = "";
 
             foreach ($results as $row)
             {
                 if(($row->Field<>'created_at')&&($row->Field<>'updated_at')&&($row->Field<>'deleted_at')&&($row->Field<>'id')):
                     $response .= "\t\$data['".camelize($row->Field)."'] = entitiestag(\$this->request->getPost('".camelize($row->Field)."'));"."\n";
+                    //validation rules
+                    if($row->Null=='NO')
+                    {
+                        $require .= "\t\t'".camelize($row->Field)."' => ["."\n";
+                        $require .= "\t\t\t'rules'     => 'required',"."\n";
+                        $require .= "\t\t\t'errors'    => ["."\n";
+                        $require .= "\t\t\t\t'required' 		=> 'Wajib diisikan',"."\n";
+                        $require .= "\t\t\t]"."\n";
+                        $require .= "\t\t],"."\n";
+                    }
                 endif;
             }
+
+            //validasi
+            $validate.="\tif(!\$this->validate(["."\n";
+            $validate.=$require."\n";
+            $validate.="\t]))"."\n";
+            $validate.="\t{"."\n";
+            $validate.="\t\t\$validation = \Config\Services::validation();"."\n";
+            $validate.="\t\treturn redirect()->back()->withInput()->with('validation',\$validation);"."\n";
+            $validate.="\t}"."\n";
 
             //insert function
             $insert.="public function insert()"."\n";
@@ -54,6 +75,7 @@ class CRUDGenerator extends BackendController
             $insert.="\t\treturn redirect()->to('denied');"."\n";
             $insert.="\t}"."\n"."\n";
             $insert.=$response."\n";
+            $insert.=$validate."\n";
             $insert.="\t\$this->".pascalize($table)."Model->insert(\$data);"."\n";
             $insert.="\treturn redirect()->to(backend_url() . '/');"."\n";
             $insert.="}"."\n"."\n";
@@ -67,6 +89,7 @@ class CRUDGenerator extends BackendController
             $update.="\t\treturn redirect()->to('denied');"."\n";
             $update.="\t}"."\n"."\n";
             $update.=$response."\n";
+            $update.=$validate."\n";
             $update.="\t\$id =  entitiestag(\$this->request->getPost('id'));"."\n";
             $update.="\t\$this->".pascalize($table)."Model->update(\$id,\$data);"."\n";
             $update.="\treturn redirect()->to(backend_url() . '/');"."\n";
