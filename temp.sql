@@ -3,15 +3,15 @@
 
  Source Server         : LOCAL
  Source Server Type    : MySQL
- Source Server Version : 100420
+ Source Server Version : 100414
  Source Host           : localhost:3306
  Source Schema         : temp
 
  Target Server Type    : MySQL
- Target Server Version : 100420
+ Target Server Version : 100414
  File Encoding         : 65001
 
- Date: 09/09/2021 15:34:18
+ Date: 10/09/2021 07:14:19
 */
 
 SET NAMES utf8mb4;
@@ -22,14 +22,14 @@ SET FOREIGN_KEY_CHECKS = 0;
 -- ----------------------------
 DROP TABLE IF EXISTS `app_group`;
 CREATE TABLE `app_group`  (
-  `group_id` int NOT NULL AUTO_INCREMENT,
+  `group_id` int(11) NOT NULL AUTO_INCREMENT,
   `group_nama` varchar(100) CHARACTER SET latin1 COLLATE latin1_swedish_ci NOT NULL,
   `deskripsi` varchar(250) CHARACTER SET latin1 COLLATE latin1_swedish_ci NULL DEFAULT NULL,
-  `created_at` datetime NULL DEFAULT NULL,
-  `updated_at` datetime NULL DEFAULT NULL,
-  `deleted_at` datetime NULL DEFAULT NULL,
+  `created_at` datetime(0) NULL DEFAULT NULL,
+  `updated_at` datetime(0) NULL DEFAULT NULL,
+  `deleted_at` datetime(0) NULL DEFAULT NULL,
   PRIMARY KEY (`group_id`) USING BTREE
-) ENGINE = MyISAM AUTO_INCREMENT = 5 CHARACTER SET = latin1 COLLATE = latin1_swedish_ci ROW_FORMAT = DYNAMIC;
+) ENGINE = MyISAM AUTO_INCREMENT = 5 CHARACTER SET = latin1 COLLATE = latin1_swedish_ci ROW_FORMAT = Dynamic;
 
 -- ----------------------------
 -- Records of app_group
@@ -59,7 +59,7 @@ CREATE TABLE `app_info`  (
   PRIMARY KEY (`id`) USING BTREE,
   INDEX `FK_app_info`(`theme`) USING BTREE,
   INDEX `FK_app_info_logim`(`login`) USING BTREE
-) ENGINE = InnoDB CHARACTER SET = latin1 COLLATE = latin1_swedish_ci ROW_FORMAT = DYNAMIC;
+) ENGINE = InnoDB CHARACTER SET = latin1 COLLATE = latin1_swedish_ci ROW_FORMAT = Dynamic;
 
 -- ----------------------------
 -- Records of app_info
@@ -71,25 +71,25 @@ INSERT INTO `app_info` VALUES ('1', 'TEMP', 'sipgan.magelangkab.go.id/pdm', 'Pem
 -- ----------------------------
 DROP TABLE IF EXISTS `app_menu`;
 CREATE TABLE `app_menu`  (
-  `menu_id` int NOT NULL AUTO_INCREMENT,
+  `menu_id` int(11) NOT NULL AUTO_INCREMENT,
   `menu_nama` varchar(40) CHARACTER SET latin1 COLLATE latin1_swedish_ci NOT NULL,
   `deskripsi` varchar(150) CHARACTER SET latin1 COLLATE latin1_swedish_ci NULL DEFAULT NULL,
   `link` varchar(30) CHARACTER SET latin1 COLLATE latin1_swedish_ci NULL DEFAULT '#',
   `prefik` varchar(30) CHARACTER SET latin1 COLLATE latin1_swedish_ci NULL DEFAULT NULL,
   `ikon` varchar(50) CHARACTER SET latin1 COLLATE latin1_swedish_ci NULL DEFAULT 'mdi mdi-home',
-  `induk_id` tinyint NULL DEFAULT NULL,
+  `induk_id` tinyint(4) NULL DEFAULT NULL,
   `root_nama` varchar(40) CHARACTER SET latin1 COLLATE latin1_swedish_ci NULL DEFAULT NULL,
-  `hirarki` tinyint NULL DEFAULT NULL,
+  `hirarki` tinyint(4) NULL DEFAULT NULL,
   `sub` enum('1','0') CHARACTER SET latin1 COLLATE latin1_swedish_ci NULL DEFAULT '0',
-  `urutan` tinyint NULL DEFAULT 1,
+  `urutan` tinyint(4) NULL DEFAULT 1,
   `aktif` enum('1','0') CHARACTER SET latin1 COLLATE latin1_swedish_ci NULL DEFAULT '1',
   `nama_tabel` varchar(20) CHARACTER SET latin1 COLLATE latin1_swedish_ci NULL DEFAULT NULL,
   `primary_key` varchar(20) CHARACTER SET latin1 COLLATE latin1_swedish_ci NULL DEFAULT NULL,
-  `created_at` datetime NULL DEFAULT NULL,
-  `updated_at` datetime NULL DEFAULT NULL,
-  `deleted_at` datetime NULL DEFAULT NULL,
+  `created_at` datetime(0) NULL DEFAULT NULL,
+  `updated_at` datetime(0) NULL DEFAULT NULL,
+  `deleted_at` datetime(0) NULL DEFAULT NULL,
   PRIMARY KEY (`menu_id`) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 59 CHARACTER SET = latin1 COLLATE = latin1_swedish_ci ROW_FORMAT = DYNAMIC;
+) ENGINE = InnoDB AUTO_INCREMENT = 60 CHARACTER SET = latin1 COLLATE = latin1_swedish_ci ROW_FORMAT = Dynamic;
 
 -- ----------------------------
 -- Records of app_menu
@@ -106,24 +106,25 @@ INSERT INTO `app_menu` VALUES (46, 'Table Model', 'Generator Table Database Menj
 INSERT INTO `app_menu` VALUES (56, 'Form Generator', 'Generator untuk kode HTML Form Blangko', 'form-generator', 'form-generator', 'mdi mdi-home', 45, 'Creator', 2, '0', 9, '1', '', '', NULL, NULL, NULL);
 INSERT INTO `app_menu` VALUES (57, 'Profile', 'Pengaturan Profile Akun', 'profile', 'profile', 'git-branch', 2, 'Pengaturan', 2, '0', 8, '1', '', '', NULL, NULL, NULL);
 INSERT INTO `app_menu` VALUES (58, 'CRUD Generator', 'Pembuatan Kode CRUD', 'crud-generator', 'crud-generator', 'circle', 45, 'Creator', 2, '1', 10, '1', '', '', NULL, NULL, NULL);
+INSERT INTO `app_menu` VALUES (59, 'Table Generator', 'Pembuatan Table HTML', 'table-generator', 'table-generator', 'book-open', 45, 'Creator', 2, '1', 11, '1', '', '', NULL, NULL, NULL);
 
 -- ----------------------------
 -- Table structure for app_role
 -- ----------------------------
 DROP TABLE IF EXISTS `app_role`;
 CREATE TABLE `app_role`  (
-  `id` int NOT NULL AUTO_INCREMENT,
-  `group_id` int NULL DEFAULT NULL,
-  `menu_id` int NULL DEFAULT NULL,
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `group_id` int(11) NULL DEFAULT NULL,
+  `menu_id` int(11) NULL DEFAULT NULL,
   `akses_lihat` enum('1','0') CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NULL DEFAULT '0',
   `akses_tambah` enum('1','0') CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NULL DEFAULT '0',
   `akses_ubah` enum('1','0') CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NULL DEFAULT '0',
   `akses_hapus` enum('1','0') CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NULL DEFAULT '0',
-  `created_at` datetime NULL DEFAULT NULL,
-  `updated_at` datetime NULL DEFAULT NULL,
-  `deleted_at` datetime NULL DEFAULT NULL,
+  `created_at` datetime(0) NULL DEFAULT NULL,
+  `updated_at` datetime(0) NULL DEFAULT NULL,
+  `deleted_at` datetime(0) NULL DEFAULT NULL,
   PRIMARY KEY (`id`) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 98 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_general_ci ROW_FORMAT = DYNAMIC;
+) ENGINE = InnoDB AUTO_INCREMENT = 99 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_general_ci ROW_FORMAT = Dynamic;
 
 -- ----------------------------
 -- Records of app_role
@@ -141,6 +142,7 @@ INSERT INTO `app_role` VALUES (94, 1, 46, '1', '0', '0', '0', NULL, NULL, NULL);
 INSERT INTO `app_role` VALUES (95, 1, 56, '1', '0', '0', '0', NULL, NULL, NULL);
 INSERT INTO `app_role` VALUES (96, 1, 57, '1', '1', '1', '1', NULL, NULL, NULL);
 INSERT INTO `app_role` VALUES (97, 1, 58, '1', '0', '0', '0', NULL, NULL, NULL);
+INSERT INTO `app_role` VALUES (98, 1, 59, '1', '0', '0', '0', NULL, NULL, NULL);
 
 -- ----------------------------
 -- Table structure for app_users
@@ -152,15 +154,15 @@ CREATE TABLE `app_users`  (
   `username` varchar(100) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL,
   `password` varchar(100) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
   `kontak` varchar(16) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL,
-  `group_id` int NOT NULL,
+  `group_id` int(11) NOT NULL,
   `foto` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL,
   `is_active` enum('1','0') CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT '1',
-  `created_at` datetime NULL DEFAULT NULL,
-  `updated_at` datetime NULL DEFAULT NULL,
-  `deleted_at` datetime NULL DEFAULT NULL,
+  `created_at` datetime(0) NULL DEFAULT NULL,
+  `updated_at` datetime(0) NULL DEFAULT NULL,
+  `deleted_at` datetime(0) NULL DEFAULT NULL,
   PRIMARY KEY (`user_id`) USING BTREE,
   INDEX `user_id`(`user_id`) USING BTREE
-) ENGINE = InnoDB CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = DYNAMIC;
+) ENGINE = InnoDB CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Dynamic;
 
 -- ----------------------------
 -- Records of app_users
@@ -172,16 +174,16 @@ INSERT INTO `app_users` VALUES ('nci.ahmad@gmail.com', '@hmad', 'Ahmad Sholikin'
 -- ----------------------------
 DROP TABLE IF EXISTS `berita`;
 CREATE TABLE `berita`  (
-  `id` int NOT NULL AUTO_INCREMENT,
-  `judul` varchar(150) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NULL DEFAULT NULL,
-  `isi` text CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NULL,
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `judul` varchar(150) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL,
+  `isi` text CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL,
   `cover` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NULL DEFAULT NULL,
-  `slug` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NULL DEFAULT NULL,
-  `created_at` datetime NULL DEFAULT NULL,
-  `updated_at` datetime NULL DEFAULT NULL,
-  `deleted_at` datetime NULL DEFAULT NULL,
+  `slug` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL,
+  `created_at` datetime(0) NULL DEFAULT NULL,
+  `updated_at` datetime(0) NULL DEFAULT NULL,
+  `deleted_at` datetime(0) NULL DEFAULT NULL,
   PRIMARY KEY (`id`) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 7 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_general_ci ROW_FORMAT = DYNAMIC;
+) ENGINE = InnoDB AUTO_INCREMENT = 7 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_general_ci ROW_FORMAT = Dynamic;
 
 -- ----------------------------
 -- Records of berita
@@ -197,17 +199,13 @@ INSERT INTO `berita` VALUES (6, 'Dokumen Pengganti PDM', '<p>-</p>', 'gambar/162
 -- ----------------------------
 DROP TABLE IF EXISTS `faq`;
 CREATE TABLE `faq`  (
-  `id` int NOT NULL AUTO_INCREMENT,
-  `pertanyaan` text CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NULL,
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `pertanyaan` text CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL,
   `jawaban` text CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NULL,
-  `created_at` datetime NULL DEFAULT NULL,
-  `updated_at` datetime NULL DEFAULT NULL,
-  `deleted_at` datetime NULL DEFAULT NULL,
+  `created_at` datetime(0) NULL DEFAULT NULL,
+  `updated_at` datetime(0) NULL DEFAULT NULL,
+  `deleted_at` datetime(0) NULL DEFAULT NULL,
   PRIMARY KEY (`id`) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 4 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_general_ci ROW_FORMAT = DYNAMIC;
-
--- ----------------------------
--- Records of faq
--- ----------------------------
+) ENGINE = InnoDB AUTO_INCREMENT = 4 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_general_ci ROW_FORMAT = Dynamic;
 
 SET FOREIGN_KEY_CHECKS = 1;
