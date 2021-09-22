@@ -8,8 +8,8 @@
                 <div class="col">
                     <select name="table" id="table" class="form-control">
                         <option value="-" disabled selected required>-- Pilihan Nama Tabel --</option>
-                        <?php foreach($data as $row):?>
-                            <option value="<?=$row->Tables_in_temp;?>">table : <?=$row->Tables_in_temp;?></option>
+                        <?php $kolom="Tables_in_".$db; foreach($data as $row):?>
+                            <option value="<?=$row->$kolom;?>">table : <?=$row->$kolom;?></option>
                         <?php endforeach;?>
                     </select>
                 </div>

@@ -25,6 +25,7 @@ class TableGenerator extends BackendController
         }
 
         $data['data']   = $results;
+        $data['db']     = $this->db->getDatabase();
         $param['page']  = view($this->path_view . 'page-index',$data);
         return view($this->theme, $param);
     }
@@ -46,7 +47,7 @@ class TableGenerator extends BackendController
             {
                 if(($row->Field<>'created_at')&&($row->Field<>'updated_at')&&($row->Field<>'deleted_at')):
                     $thead .= "\t\t\t\t".'<th>'.humanize($row->Field).'</th>'."\n";
-                    $tbody .= "\t\t\t\t".'<td><?=$row["'.humanize($row->Field).'"];?></td>'."\n";
+                    $tbody .= "\t\t\t\t".'<td><?=$row["'.$row->Field.'"];?></td>'."\n";
                 endif;
 
                 if(($row->Key<>'id'))
@@ -55,8 +56,8 @@ class TableGenerator extends BackendController
                     $aksi.= "\t\t\t\t\t".'<div class="btn-group" role="group">'."\n";
                     $aksi.= "\t\t\t\t\t\t".'<?=btn_edit("./edit?id=".$row["id"]);?>'."\n";
                     $aksi.= "\t\t\t\t\t\t".'<?=btn_delete("./delete?id=".$row["id"]);?>'."\n";
-                    $aksi.= "\t\t\t\t\t".'</div">'."\n";
-                    $aksi.= "\t\t\t\t"."<td>\n";
+                    $aksi.= "\t\t\t\t\t".'</div>'."\n";
+                    $aksi.= "\t\t\t\t"."</td>\n";
                 }
             }
 

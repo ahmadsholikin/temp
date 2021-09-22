@@ -139,7 +139,7 @@
             // ajax to get_primary_key
             $.ajax(
             {
-                url     : '<?=base_url();?>/menu/get_primary_key',
+                url     : '<?=backend_url();?>/menu/get_primary_key',
                 type    : 'POST',
                 data    : { 
                             "pilihan"   : pilihan,

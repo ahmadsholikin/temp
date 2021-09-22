@@ -23,6 +23,7 @@ class CRUDGenerator extends BackendController
             return redirect()->to('denied');
         }
         $data['data']   = $results;
+        $data['db']     = $this->db->getDatabase();
         $param['page']  = view($this->path_view . 'page-index',$data);
         return view($this->theme, $param);
     }
@@ -44,7 +45,7 @@ class CRUDGenerator extends BackendController
             foreach ($results as $row)
             {
                 if(($row->Field<>'created_at')&&($row->Field<>'updated_at')&&($row->Field<>'deleted_at')&&($row->Field<>'id')):
-                    $response .= "\t\$data['".camelize($row->Field)."'] = entitiestag(\$this->request->getPost('".camelize($row->Field)."'));"."\n";
+                    $response .= "\t\$data['".$row->Field."'] = entitiestag(\$this->request->getPost('".camelize($row->Field)."'));"."\n";
                     //validation rules
                     if($row->Null=='NO')
                     {
@@ -66,10 +67,13 @@ class CRUDGenerator extends BackendController
             $validate.="\t\t\$validation = \Config\Services::validation();"."\n";
             $validate.="\t\treturn redirect()->back()->withInput()->with('validation',\$validation);"."\n";
             $validate.="\t}"."\n";
+            
 
             //insert function
             $insert.="public function insert()"."\n";
             $insert.="{"."\n";
+            $insert.="\t\$param['menu']       = \$this->menu;"."\n";
+            $insert.="\t\$param['activeMenu']       = \$this->activeMenu;"."\n";
             $insert.="\tif(\$param['activeMenu']['akses_tambah'] == '0')"."\n";
             $insert.="\t{"."\n";
             $insert.="\t\treturn redirect()->to('denied');"."\n";
@@ -84,6 +88,8 @@ class CRUDGenerator extends BackendController
             //update function
             $update.="public function update()"."\n";
             $update.="{"."\n";
+            $update.="\t\$param['menu']       = \$this->menu;"."\n";
+            $update.="\t\$param['activeMenu']       = \$this->activeMenu;"."\n";
             $update.="\tif(\$param['activeMenu']['akses_ubah'] == '0')"."\n";
             $update.="\t{"."\n";
             $update.="\t\treturn redirect()->to('denied');"."\n";
@@ -99,6 +105,8 @@ class CRUDGenerator extends BackendController
             //delete function
             $delete.="public function delete()"."\n";
             $delete.="{"."\n";
+            $delete.="\t\$param['menu']       = \$this->menu;"."\n";
+            $delete.="\t\$param['activeMenu']       = \$this->activeMenu;"."\n";
             $delete.="\tif(\$param['activeMenu']['akses_hapus'] == '0')"."\n";
             $delete.="\t{"."\n";
             $delete.="\t\treturn redirect()->to('denied');"."\n";

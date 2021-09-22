@@ -53,7 +53,7 @@ class Menu extends BackendController
         $param['hirarki']     = entitiestag(strip_tags($this->request->getPost('hirarki')));
         $param['sub']         = entitiestag(strip_tags($this->request->getPost('sub')));
         $param['aktif']       = entitiestag(strip_tags($this->request->getPost('aktif')));
-        $param['prefik']      = $slug;
+        $param['prefik']      = entitiestag(strip_tags($this->request->getPost('link')));
         $param['nama_tabel']  = entitiestag(strip_tags($this->request->getPost('nama_tabel')));
         $param['primary_key'] = entitiestag(strip_tags($this->request->getPost('primary_key')));
       
@@ -130,7 +130,7 @@ class Menu extends BackendController
         if($this->request->getPost('create_ff')=='folder')
         {
             $folder_name = entitiestag($this->request->getPost('menu_nama'));
-            $folderPath = FCPATH."app/Controllers/Backend/".strtolower($folder_name);
+            $folderPath = FCPATH."app/Controllers/Backend/".pascalize($folder_name);
             mkdir("$folderPath");
             chmod("$folderPath", 0755);
         }
@@ -140,10 +140,26 @@ class Menu extends BackendController
             if(count($root_menu)>1)
             {
                 $file_name      = entitiestag($this->request->getPost('menu_nama'));
-                $folderPath     = FCPATH."app/Controllers/Backend/".$root_menu[1]."/".pascalize($file_name).".php";
-                $root_folder = FCPATH."app/Controllers/Backend/".$root_menu[1];
+                $folderPath     = FCPATH."app/Controllers/Backend/".pascalize($root_menu[1])."/".pascalize($file_name).".php";
+                $root_folder    = FCPATH."app/Controllers/Backend/".pascalize($root_menu[1]);
                 chmod("$root_folder", 0777);
                 fopen($folderPath,"w");
+
+                //buat folder di view
+                $folder_name = entitiestag($this->request->getPost('menu_nama'));
+                $folderPath = FCPATH."app/Views/backend/".strtolower(pascalize($root_menu[1]))."/".strtolower(pascalize($folder_name));
+                mkdir("$folderPath");
+                chmod("$folderPath", 0755);
+
+                $page_index     = FCPATH."app/Views/backend/".strtolower(pascalize($root_menu[1]))."/".strtolower(pascalize($folder_name)).'/page-index.php';
+                $page_add       = FCPATH."app/Views/backend/".strtolower(pascalize($root_menu[1]))."/".strtolower(pascalize($folder_name)).'/page-add.php';
+                $page_edit      = FCPATH."app/Views/backend/".strtolower(pascalize($root_menu[1]))."/".strtolower(pascalize($folder_name)).'/page-edit.php';
+                $root_folder    = FCPATH."app/Views/backend/".strtolower(pascalize($root_menu[1]))."/".strtolower(pascalize($folder_name));
+                chmod("$root_folder", 0777);
+                fopen($page_index,"w");
+                fopen($page_add,"w");
+                fopen($page_edit,"w");
+
             }
         }
         $this->MenuModel->insert($param);

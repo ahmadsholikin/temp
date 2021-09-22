@@ -23,7 +23,9 @@ class TableModel extends BackendController
         {
             return redirect()->to('denied');
         }
+
         $data['data']   = $results;
+        $data['db']     = $this->db->getDatabase();
         $param['page']  = view($this->path_view . 'page-index',$data);
         return view($this->theme, $param);
     }
