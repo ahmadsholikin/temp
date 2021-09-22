@@ -14310,13 +14310,11 @@ body {
     box-shadow: none !important;
 }
 .signin-panel, .signup-panel {
-    width: 100vw;
     height: 100vh;
     background-color: #f9f9fd;
     position: relative;
     display: flex;
     align-items: center;
-    justify-content: flex-end;
     overflow: hidden;
 }
 .signin-panel .svg-bg, .signup-panel .svg-bg {
@@ -14342,31 +14340,36 @@ body {
         transform: translateX(calc(50% + 200px));
    }
 }
+
 .signin-sidebar {
     position: absolute;
     top: 0;
     left: 0;
     background-color: #fff;
-    border-right: 1px solid rgba(224, 225, 235, 0.85);
+    border: 1px solid rgba(224, 225, 235, 0.85);
     box-shadow: 0 4px 12px 0 rgba(131, 146, 165, 0.15), 2px 2px 5px 0 rgba(60, 70, 83, 0.04);
-    width: 100%;
-    height: 100vh;
     overflow: hidden;
 }
+
 @media (min-width: 576px) {
     .signin-sidebar {
         width: 400px;
    }
 }
 .signin-sidebar-body, .signup-sidebar-body {
-    height: 100%;
+    margin-top:70px;
+    height: 90%;
     padding: 30px;
     display: flex;
     flex-direction: column;
+    border: 1px solid rgba(224, 225, 235, 0.85);
+    box-shadow: 0 4px 12px 0 rgba(131, 146, 165, 0.15), 2px 2px 5px 0 rgba(60, 70, 83, 0.04);
+    background-color: #fff;
 }
 @media (min-width: 992px) {
     .signin-sidebar-body, .signup-sidebar-body {
         padding: 40px;
+        margin-top:100px;
    }
 }
 .signin-title, .signup-title {
@@ -14383,7 +14386,7 @@ body {
 }
 .signin-form, .signup-form {
     margin-top: 40px;
-    margin-bottom: 40px;
+    margin-bottom: 10px;
 }
 .signin-form .form-group, .signup-form .form-group {
     margin-bottom: 20px;
