@@ -8,9 +8,25 @@
         <link rel="icon" type="image/png" sizes="32x32" href="<?=base_url('favicon');?>/favicon-32x32.png">
         <link rel="icon" type="image/png" sizes="16x16" href="<?=base_url('favicon');?>/favicon-16x16.png">
         <!-- Meta -->
-        <title>Biana</title>
+        <title>eXcode</title>
         <link rel="stylesheet" href="<?=base_url();?>/public/backend/assets/css/cassie.css">
         <script src="<?= base_url(); ?>/public/plugins/sweetalert/sweetalert.min.js"></script>
+        <style>
+            .btn-eye{
+                font-size: 12px;
+                font-weight: 300;
+                border-width: 0 0 2px 0;
+                border-color: #d9dfe760;
+                color: #94989e;
+                background: transparent;
+            }
+
+            .btn-eye:focus{
+                outline: 0px dotted;
+                outline: 0px auto -webkit-focus-ring-color;
+                border-color: #d9dfe760;
+            }
+        </style>
     </head>
     <body>
         <div class="container">
@@ -26,7 +42,7 @@
                             <?= csrf_field() ?>
                             <div class="signin-form">
                                 <div class="form-group">
-                                    <label>Usermane</label>
+                                    <label>Username</label>
                                     <input type="text" name="email" class="form-control" placeholder="Entrikan Username Anda">
                                 </div>
                                 <div class="form-group">
@@ -34,7 +50,12 @@
                                         <span>Password</span>
                                         <a href="" class="tx-13">Lupa kata sandi?</a>
                                     </label>
-                                    <input type="password" name="password" class="form-control" placeholder="Entrikan password SSO Anda">
+                                    <div class="input-group">
+                                        <input type="password" id="password" name="password" class="form-control" placeholder="Entrikan password SSO Anda">
+                                        <button class="btn-eye" id="btn-eye" type="button" onclick="changeType()">
+                                            <i data-feather="eye-off"></i>
+                                        </button>
+                                    </div>
                                 </div>
                                 <div class="form-group d-flex mg-b-0">
                                     <button class="btn btn-brand-01 btn-uppercase flex-fill" type="submit">Masuk</button>
@@ -53,9 +74,26 @@
             </div>
         </div>
     </body>
-</html>
-<?php if(!empty(session()->getFlashdata('flash_info'))):?>
+    <script src="<?=base_url('public/backend');?>/lib/feather-icons/feather.min.js"></script>
     <script>
-        swal("Uupps.. Login Gagal!", "username dan password yang Anda masukkan salah", "error");
+        feather.replace({ class: 'ikon'});
+
+        function changeType(){
+            const tipe = document.getElementById('password').type;
+            if(tipe=='password')
+            {
+                document.getElementById('password').type = 'text';
+                document.querySelector('.btn-eye svg').replaceWith(feather.icons.square.toSvg())
+            }
+            else
+            {
+                document.getElementById('password').type = 'password';
+            }
+        }
     </script>
-<?php endif;?>
+    <?php if(!empty(session()->getFlashdata('flash_info'))):?>
+        <script>
+            swal("Uupps.. Login Gagal!", "username dan password yang Anda masukkan salah", "error");
+        </script>
+    <?php endif;?>
+</html>
