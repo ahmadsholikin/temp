@@ -18,7 +18,7 @@
                 <div class="col-12 col-md-5">
                     <div class="signin-sidebar-body">
                         <a href="#" class="sidebar-logo mg-b-40">
-                            <span>Sistem Dashboard Biana</span>
+                            <span>Dashboard Layanan Sistem</span>
                         </a>
                         <h5 >Selamat Datang!</h5>
                         <p>Silakan masuk dengan Akun anda.</p>
