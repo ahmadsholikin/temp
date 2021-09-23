@@ -10,13 +10,13 @@
         <!-- Meta -->
         <title>eXcode</title>
         <link rel="stylesheet" href="<?=base_url();?>/public/backend/assets/css/cassie.css">
+        <script src="<?=base_url('public/backend');?>/lib/jquery/jquery.min.js"></script>
         <script src="<?= base_url(); ?>/public/plugins/sweetalert/sweetalert.min.js"></script>
         <style>
             .btn-eye{
                 font-size: 12px;
                 font-weight: 300;
-                border-width: 0 0 2px 0;
-                border-color: #d9dfe760;
+                border-bottom: 2px solid #d9dfe7;
                 color: #94989e;
                 background: transparent;
             }
@@ -52,9 +52,9 @@
                                     </label>
                                     <div class="input-group">
                                         <input type="password" id="password" name="password" class="form-control" placeholder="Entrikan password SSO Anda">
-                                        <button class="btn-eye" id="btn-eye" type="button" onclick="changeType()">
+                                        <span class="btn-eye" id="btn-eye" type="button" onclick="changeType()">
                                             <i data-feather="eye-off"></i>
-                                        </button>
+                                        </span>
                                     </div>
                                 </div>
                                 <div class="form-group d-flex mg-b-0">
@@ -76,18 +76,21 @@
     </body>
     <script src="<?=base_url('public/backend');?>/lib/feather-icons/feather.min.js"></script>
     <script>
-        feather.replace({ class: 'ikon'});
+        feather.replace();
 
         function changeType(){
             const tipe = document.getElementById('password').type;
             if(tipe=='password')
             {
                 document.getElementById('password').type = 'text';
-                document.querySelector('.btn-eye svg').replaceWith(feather.icons.square.toSvg())
+                $(".btn-eye svg.feather.feather-eye-off").replaceWith(feather.icons.eye.toSvg());
+                feather.replace();
             }
             else
             {
                 document.getElementById('password').type = 'password';
+                $(".btn-eye svg.feather.feather-eye").replaceWith(feather.icons['eye-off'].toSvg());
+                feather.replace();
             }
         }
     </script>
